@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mega Zing SPA in San Dimas, CA — full body massage, foot reflexology, facial services, gift certificates and customer rewards." />
-  <meta name="theme-color" content="#0f241f" />
-  <title>Mega Zing SPA | San Dimas, CA</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Mega Zing SPA in San Dimas, CA — full body massage, foot reflexology, facial services, gift certificates and customer rewards." name="description"/>
+<meta content="#0f241f" name="theme-color"/>
+<title>Mega Zing SPA | San Dimas, CA</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --ink: #10231f;
       --deep: #091713;
@@ -280,10 +279,10 @@
     .hero-info div { display: flex; gap: 11px; align-items: flex-start; color: rgba(255,255,255,.75); font-size: .9rem; }
 
     .trust-strip { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; transform: translateY(50%); }
-    .trust-inner { display: grid; grid-template-columns: repeat(4,1fr); background: #fff; border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
-    .trust-item { padding: 21px 22px; border-right: 1px solid var(--line); display: flex; align-items: center; gap: 13px; font-weight: 700; font-size: .88rem; }
+    .trust-inner { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(255,253,249,.98); color: var(--ink); border: 1px solid rgba(200,166,107,.22); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
+    .trust-item { padding: 21px 22px; border-right: 1px solid var(--line); display: flex; align-items: center; gap: 13px; font-weight: 800; font-size: .88rem; color: #173a31; text-shadow: none; }
     .trust-item:last-child { border-right: none; }
-    .trust-icon { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #f4eee2; color: #9a773e; flex: 0 0 auto; }
+    .trust-icon { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #15382f; color: #f2d79f; border: 1px solid rgba(200,166,107,.34); box-shadow: 0 8px 18px rgba(9,23,19,.12); flex: 0 0 auto; font-weight: 800; }
 
     /* About */
     .about { padding-top: 150px; }
@@ -496,536 +495,650 @@
       .hero { padding-bottom: 120px; }
     }
 
+
+    @media (max-width:760px) {
+      .trust-inner { grid-template-columns:repeat(2,minmax(0,1fr)); border-radius:16px; }
+      .trust-item { min-width:0; padding:11px 10px; gap:8px; font-size:.68rem; line-height:1.25; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .trust-item:nth-child(2n) { border-right:0; }
+      .trust-item:nth-last-child(-n+2) { border-bottom:0; }
+      .trust-icon { width:30px; height:30px; font-size:.75rem; }
+    }
+    @media (max-width:420px) {
+      .trust-inner { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .trust-item { border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:10px 8px; font-size:.64rem; }
+      .trust-item:nth-child(2n) { border-right:0; }
+      .trust-item:nth-last-child(-n+2) { border-bottom:0; }
+      .trust-icon { width:28px; height:28px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
     }
-  </style>
+  
+
+    /* Manager's Special Offers */
+    .specials { background: linear-gradient(180deg,#fffdf9 0%,#f4ecdf 100%); overflow:hidden; }
+    .specials::before { content:""; position:absolute; width:520px; height:520px; border-radius:50%; background:rgba(200,166,107,.12); filter:blur(20px); top:-260px; right:-150px; pointer-events:none; }
+    .specials-head { display:grid; grid-template-columns:1fr .74fr; gap:50px; align-items:end; margin-bottom:42px; position:relative; z-index:1; }
+    .specials-note { color:var(--muted); margin:0; }
+    .specials-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; position:relative; z-index:1; }
+    .special-card { border:1px solid rgba(185,145,84,.25); border-radius:26px; overflow:hidden; background:#fff; box-shadow:0 16px 45px rgba(16,35,31,.08); display:flex; flex-direction:column; }
+    .special-card.featured { border-color:rgba(200,166,107,.65); box-shadow:0 20px 55px rgba(160,120,55,.17); }
+    .special-media { height:245px; position:relative; overflow:hidden; background:#d7d0c4; }
+    .special-media img { width:100%; height:100%; object-fit:cover; }
+    .special-badge { position:absolute; top:16px; left:16px; padding:8px 12px; border-radius:999px; background:rgba(9,23,19,.88); color:var(--gold-2); font-size:.65rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; backdrop-filter:blur(8px); }
+    .special-card.featured .special-badge { background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#17241f; }
+    .special-body { padding:26px; display:flex; flex-direction:column; flex:1; }
+    .special-body h3 { font-family:"Cormorant Garamond",serif; font-size:1.8rem; line-height:1.03; margin:0 0 10px; }
+    .special-body p { color:var(--muted); font-size:.86rem; margin:0 0 18px; }
+    .special-pricing { margin-top:auto; padding-top:18px; border-top:1px solid var(--line); display:flex; align-items:end; justify-content:space-between; gap:14px; }
+    .regular-price { font-size:.78rem; color:#8a948f; text-decoration:line-through; }
+    .special-price { font-family:"Cormorant Garamond",serif; font-size:2.15rem; line-height:1; color:#9a6d29; font-weight:700; white-space:nowrap; }
+    .special-actions { margin-top:30px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+
+    /* Services & Pricing menu */
+    .services-menu { background:#fbf8f2; }
+    .service-disclaimer { margin-top:18px; padding:14px 16px; border-left:3px solid var(--gold); background:#fff; color:var(--muted); border-radius:0 14px 14px 0; font-size:.84rem; max-width:850px; }
+    .category-nav { display:flex; flex-wrap:wrap; gap:9px; margin:32px 0 10px; }
+    .category-nav a { padding:9px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:.76rem; font-weight:750; color:#4d5d56; }
+    .category-nav a:hover { border-color:var(--gold); color:#8b662d; }
+    .service-category { padding:54px 0 10px; scroll-margin-top:100px; }
+    .service-category + .service-category { border-top:1px solid var(--line); margin-top:42px; }
+    .service-category-head { display:grid; grid-template-columns:1fr .7fr; gap:40px; align-items:end; margin-bottom:28px; }
+    .service-category-head h3 { font-family:"Cormorant Garamond",serif; font-size:clamp(2.1rem,4vw,3.5rem); margin:0; line-height:1; }
+    .service-category-head p { color:var(--muted); margin:0; }
+    .menu-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .menu-card { background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:0 12px 34px rgba(16,35,31,.055); }
+    .menu-card-media { height:270px; position:relative; overflow:hidden; background:#ddd5c8; }
+    .menu-card-media img { width:100%; height:100%; object-fit:cover; }
+    .menu-card-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 58%,rgba(5,18,15,.32)); pointer-events:none; }
+    .room-label { position:absolute; z-index:2; left:16px; bottom:15px; padding:7px 10px; border-radius:999px; background:rgba(8,23,19,.78); color:#fff; font-size:.66rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; backdrop-filter:blur(8px); }
+    .menu-card-body { padding:25px; }
+    .menu-kicker { font-size:.66rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:#9a773e; }
+    .menu-card h4 { font-family:"Cormorant Garamond",serif; font-size:1.85rem; line-height:1.05; margin:9px 0 10px; }
+    .menu-card p { color:var(--muted); font-size:.86rem; margin:0 0 16px; }
+    .menu-facts { display:grid; grid-template-columns:1fr auto; gap:14px; align-items:end; border-top:1px solid var(--line); padding-top:16px; }
+    .menu-duration { font-size:.76rem; color:#596861; font-weight:700; }
+    .menu-price { font-family:"Cormorant Garamond",serif; font-size:1.7rem; font-weight:700; color:#8d672e; text-align:right; }
+    .menu-price small { display:block; font-family:"Inter",sans-serif; font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; color:#89938f; font-weight:700; }
+    .price-stack { text-align:right; }
+    .price-stack .was { display:block; color:#8d9692; font-size:.72rem; text-decoration:line-through; }
+    .price-stack .now { display:block; color:#9a6d29; font-family:"Cormorant Garamond",serif; font-size:1.8rem; font-weight:700; line-height:1.05; }
+    .price-stack .label { display:block; font-size:.58rem; color:#9a773e; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .call-inline { display:inline-flex; margin-top:17px; color:#18362f; font-size:.8rem; font-weight:800; border-bottom:1px solid #b99154; }
+
+    /* Couples feature */
+    .couples-feature { margin:26px 0 10px; display:grid; grid-template-columns:1.08fr .92fr; min-height:430px; border-radius:28px; overflow:hidden; background:#102a23; color:#fff; box-shadow:var(--shadow); }
+    .couples-feature-media { min-height:430px; }
+    .couples-feature-media img { width:100%; height:100%; object-fit:cover; }
+    .couples-feature-copy { padding:clamp(32px,5vw,58px); display:flex; flex-direction:column; justify-content:center; }
+    .couples-feature-copy .eyebrow { color:var(--gold-2); }
+    .couples-feature-copy h4 { font-family:"Cormorant Garamond",serif; font-size:clamp(2.4rem,4vw,4rem); line-height:.95; margin:0 0 18px; }
+    .couples-feature-copy p { color:rgba(255,255,255,.68); }
+
+    /* Table shower editorial block */
+    .table-feature { border-radius:30px; overflow:hidden; background:#0c211b; color:#fff; margin-top:14px; }
+    .table-feature-top { display:grid; grid-template-columns:.9fr 1.1fr; }
+    .table-feature-media { min-height:470px; }
+    .table-feature-media img { width:100%; height:100%; object-fit:cover; }
+    .table-feature-copy { padding:clamp(34px,5vw,62px); }
+    .table-feature-copy .eyebrow { color:var(--gold-2); }
+    .table-feature-copy h4 { font-family:"Cormorant Garamond",serif; font-size:clamp(2.4rem,4vw,4rem); line-height:.96; margin:0 0 18px; }
+    .table-feature-copy p { color:rgba(255,255,255,.68); }
+    .table-price-box { margin-top:24px; padding:18px 20px; border-radius:18px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); display:flex; align-items:end; justify-content:space-between; gap:20px; }
+    .table-price-box strong { font-family:"Cormorant Garamond",serif; font-size:2.5rem; color:var(--gold-2); line-height:1; }
+    .table-price-box span { color:rgba(255,255,255,.72); font-size:.82rem; }
+    .ingredients { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:18px; }
+    .ingredient { padding:15px; border-radius:16px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.1); }
+    .ingredient b { display:block; color:#f8f3e9; font-size:.8rem; margin-bottom:5px; }
+    .ingredient span { color:rgba(255,255,255,.55); font-size:.7rem; line-height:1.5; }
+    .table-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:24px; background:#f5efe4; color:var(--ink); }
+    .table-step { padding:20px; background:#fff; border-radius:18px; border:1px solid var(--line); }
+    .table-step strong { display:block; font-family:"Cormorant Garamond",serif; font-size:1.35rem; margin:8px 0; }
+    .table-step p { font-size:.78rem; color:var(--muted); margin:0; }
+    .step-num { color:#a27c42; font-size:.65rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+
+    /* Packages */
+    .package-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .package-card { border:1px solid var(--line); border-radius:24px; overflow:hidden; background:#fff; box-shadow:0 12px 34px rgba(16,35,31,.06); }
+    .package-card.featured { border-color:rgba(200,166,107,.7); transform:translateY(-5px); box-shadow:0 20px 50px rgba(160,120,55,.14); }
+    .package-media { height:220px; overflow:hidden; position:relative; }
+    .package-media img { width:100%; height:100%; object-fit:cover; }
+    .package-content { padding:24px; }
+    .package-tag { font-size:.62rem; letter-spacing:.13em; text-transform:uppercase; color:#9a773e; font-weight:800; }
+    .package-content h4 { font-family:"Cormorant Garamond",serif; font-size:1.75rem; line-height:1.05; margin:8px 0 12px; }
+    .package-content ul { padding-left:18px; color:var(--muted); font-size:.8rem; }
+    .package-prices { padding-top:16px; margin-top:16px; border-top:1px solid var(--line); display:flex; align-items:end; justify-content:space-between; gap:12px; }
+    .package-prices .regular { color:#8c9692; text-decoration:line-through; font-size:.75rem; }
+    .package-prices .special { font-family:"Cormorant Garamond",serif; color:#9a6d29; font-size:2rem; line-height:1; font-weight:700; text-align:right; }
+    .package-prices .special small { font-family:"Inter",sans-serif; font-size:.56rem; display:block; text-transform:uppercase; letter-spacing:.1em; }
+
+    /* Add-ons / detail grids */
+    .addon-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .addon-card { padding:26px; border-radius:22px; border:1px solid var(--line); background:#fff; }
+    .addon-card h4 { font-family:"Cormorant Garamond",serif; font-size:1.8rem; margin:6px 0 10px; }
+    .addon-card p { color:var(--muted); font-size:.84rem; }
+    .addon-price { display:flex; justify-content:space-between; align-items:end; gap:14px; padding-top:16px; border-top:1px solid var(--line); }
+    .addon-price .was { color:#8f9995; text-decoration:line-through; font-size:.76rem; }
+    .addon-price .now { color:#9a6d29; font-family:"Cormorant Garamond",serif; font-size:2rem; font-weight:700; }
+    .service-info-box { margin-top:18px; padding:20px 22px; border-radius:18px; background:#eef2ed; color:#51615a; font-size:.82rem; }
+    .hair-wash { display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; }
+    .hair-chip { padding:11px 14px; border-radius:999px; background:#fff; border:1px solid var(--line); font-size:.8rem; }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:20px; }
+    .why-card { padding:20px; border-radius:18px; background:#fff; border:1px solid var(--line); }
+    .why-card strong { font-family:"Cormorant Garamond",serif; font-size:1.25rem; display:block; margin-bottom:6px; }
+    .why-card span { color:var(--muted); font-size:.76rem; line-height:1.5; }
+    .service-call-band { margin-top:50px; padding:clamp(30px,5vw,52px); border-radius:28px; background:linear-gradient(135deg,#0e2b23,#071713); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .service-call-band h3 { font-family:"Cormorant Garamond",serif; font-size:clamp(2.1rem,4vw,3.5rem); margin:0 0 8px; line-height:1; }
+    .service-call-band p { color:rgba(255,255,255,.62); margin:0; max-width:680px; }
+
+    /* Expanded store gallery */
+    .store-photo-grid--expanded { grid-template-columns:repeat(4,1fr); grid-auto-rows:210px; }
+    .store-photo-grid--expanded .store-photo:nth-child(1),
+    .store-photo-grid--expanded .store-photo:nth-child(7),
+    .store-photo-grid--expanded .store-photo:nth-child(12) { grid-column:span 2; grid-row:span 2; }
+    .store-photo-grid--expanded .store-photo:nth-child(4),
+    .store-photo-grid--expanded .store-photo:nth-child(9) { grid-row:span 2; }
+
+    @media (max-width:1080px) {
+      .specials-grid { grid-template-columns:1fr 1fr; }
+      .specials-head, .service-category-head { grid-template-columns:1fr; gap:18px; }
+      .ingredients { grid-template-columns:repeat(3,1fr); }
+      .table-steps { grid-template-columns:1fr 1fr; }
+      .package-grid { grid-template-columns:1fr; }
+      .package-card.featured { transform:none; }
+      .store-photo-grid--expanded { grid-template-columns:repeat(3,1fr); }
+      .store-photo-grid--expanded .store-photo:nth-child(n) { grid-column:span 1; grid-row:span 1; }
+      .store-photo-grid--expanded .store-photo:nth-child(1), .store-photo-grid--expanded .store-photo:nth-child(8) { grid-column:span 2; grid-row:span 2; }
+    }
+    @media (max-width:760px) {
+      /* Keep the two most important sales sections in a true 2-column mobile grid. */
+      .specials-grid, .menu-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+      .addon-grid { grid-template-columns:1fr; }
+      .special-card, .menu-card { border-radius:18px; min-width:0; }
+      .special-media, .menu-card-media { height:150px; }
+      .special-badge { top:9px; left:9px; padding:6px 8px; font-size:.5rem; letter-spacing:.08em; }
+      .special-body, .menu-card-body { padding:14px 12px; }
+      .special-body h3 { font-size:1.18rem; line-height:1.02; margin-bottom:7px; }
+      .special-body p, .menu-card p { font-size:.69rem; line-height:1.5; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; margin-bottom:12px; }
+      .special-pricing { padding-top:11px; gap:6px; align-items:flex-end; }
+      .regular-price { font-size:.64rem; }
+      .special-price { font-size:1.48rem; }
+      .room-label { left:8px; bottom:8px; padding:5px 7px; font-size:.48rem; letter-spacing:.05em; max-width:calc(100% - 16px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      .menu-kicker { font-size:.54rem; letter-spacing:.1em; }
+      .menu-card h4 { font-size:1.2rem; line-height:1.03; margin:7px 0 8px; overflow-wrap:anywhere; }
+      .menu-facts { grid-template-columns:minmax(0,1fr) auto; gap:7px; padding-top:11px; align-items:end; }
+      .menu-duration { font-size:.62rem; line-height:1.3; }
+      .menu-price { font-size:1.38rem; }
+      .menu-price small { font-size:.5rem; }
+      .price-stack .was { font-size:.58rem; }
+      .price-stack .now { font-size:1.42rem; }
+      .price-stack .label { font-size:.48rem; letter-spacing:.07em; }
+      .call-inline { font-size:.68rem; margin-top:11px; }
+      .couples-feature, .table-feature-top { grid-template-columns:1fr; }
+      .couples-feature-media, .table-feature-media { min-height:320px; }
+      .ingredients { grid-template-columns:1fr 1fr; }
+      .table-steps, .why-grid { grid-template-columns:1fr; }
+      .service-call-band { align-items:flex-start; flex-direction:column; }
+      .service-call-band .btn { width:100%; }
+      .store-photo-grid--expanded { grid-template-columns:1fr 1fr; grid-auto-rows:185px; }
+      .store-photo-grid--expanded .store-photo:nth-child(n) { grid-column:span 1; grid-row:span 1; }
+      .store-photo-grid--expanded .store-photo:first-child { grid-column:span 2; grid-row:span 2; }
+    }
+    @media (max-width:430px) {
+      /* 375px phones still keep two cards per row for Specials and Services. */
+      .specials-grid, .menu-grid { gap:8px; }
+      .special-media, .menu-card-media { height:128px; }
+      .special-body, .menu-card-body { padding:12px 10px; }
+      .special-body h3, .menu-card h4 { font-size:1.08rem; }
+      .special-body p, .menu-card p { font-size:.64rem; -webkit-line-clamp:3; }
+      .special-price, .price-stack .now, .menu-price { font-size:1.28rem; }
+      .regular-price, .price-stack .was { font-size:.56rem; }
+      .menu-duration { font-size:.57rem; }
+      .ingredients { grid-template-columns:1fr; }
+      .store-photo-grid--expanded { grid-template-columns:1fr; grid-auto-rows:260px; }
+      .store-photo-grid--expanded .store-photo:first-child { grid-column:span 1; grid-row:span 1; }
+      .special-pricing, .menu-facts { align-items:flex-end; flex-direction:row; }
+      .table-price-box, .addon-price, .package-prices { align-items:flex-start; flex-direction:column; }
+      .price-stack, .menu-price { text-align:right; }
+    }
+
+.store-photo figcaption{position:absolute;left:12px;bottom:12px;z-index:3;padding:7px 10px;border-radius:999px;background:rgba(5,18,15,.72);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;backdrop-filter:blur(8px)}
+</style>
 </head>
-
 <body>
-  <header class="site-header" id="header">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Mega Zing SPA home">
-        <img
-          class="brand-logo"
-          src="https://img.dingliuads.com/file/1794483163448_lQDPJwlJRFQnVvnNApbNAn6wTQMYhQ4w5C0Kw4emsNnfAA_638_662.jpg"
-          alt="Mega Zing SPA logo"
-        />
-        <span class="brand-text">
-          <span class="brand-name">Mega Zing SPA</span>
-          <span class="brand-city">San Dimas, California</span>
-        </span>
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#spa-gallery">Our Spa</a>
-        <a href="#services">Services</a>
-        <a href="#gifts">Gifts & Rewards</a>
-        <a href="#experience">Experience</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn--gold nav-cta" href="tel:+19099665588">Call Now</a>
-      </nav>
-
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span>
-      </button>
-    </div>
-
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-      <a href="#about">About</a>
-      <a href="#spa-gallery">Our Spa</a>
-      <a href="#services">Services</a>
-      <a href="#gifts">Gifts & Rewards</a>
-      <a href="#experience">Experience</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+19099665588">Call Now</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="home" aria-label="Mega Zing SPA introduction">
-      <div class="hero-bg" aria-hidden="true">
-        <img class="active" src="https://img.dingliuads.com/file/1794483169340_lQDPJx7sFvNujXnNBDjNBaCwH-ZCd1M1YbYKw4ewOA-KAA_1440_1080.jpg" alt="" />
-        <img src="https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg" alt="" loading="lazy" />
-        <img src="https://i.pinimg.com/1200x/6a/df/fe/6adffe5706bdce88dd2d2d0fc6875398.jpg" alt="" loading="lazy" />
-        <img src="https://i.pinimg.com/1200x/84/cd/b7/84cdb7509c5bacdc80bdf1336985d900.jpg" alt="" loading="lazy" />
-      </div>
-
-      <div class="container hero-content">
-        <div>
-          <div class="hero-kicker">A quieter way to unwind in San Dimas</div>
-          <h1>Rest deeply.<span>Return renewed.</span></h1>
-          <p class="hero-copy">
-            Mega Zing Spa brings traditional Eastern techniques together with modern Western comfort in a welcoming San Dimas setting for massage, body care, foot treatments and beauty services.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn--gold" href="tel:+19099665588">Call Now</a>
-            <a class="btn btn--outline" href="#services">Explore Services</a>
-          </div>
-        </div>
-
-        <aside class="hero-panel" aria-label="Spa details">
-          <small>Open 7 Days</small>
-          <h2>Space to slow down, every day.</h2>
-          <div class="hero-info">
-            <div><span>◷</span><span>10:00 AM – 10:00 PM</span></div>
-            <div><span>⌖</span><span>728 W. Arrow Hwy, San Dimas, CA 91773</span></div>
-            <div><span>☎</span><a href="tel:+19099665588">909-966-5588</a></div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="trust-strip">
-        <div class="container trust-inner">
-          <div class="trust-item"><span class="trust-icon">◌</span>Quiet Atmosphere</div>
-          <div class="trust-item"><span class="trust-icon">◇</span>Private Comfort</div>
-          <div class="trust-item"><span class="trust-icon">✦</span>Thoughtful Care</div>
-          <div class="trust-item"><span class="trust-icon">◷</span>Open Daily</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-image-stack reveal">
-            <div class="about-main">
-              <img src="https://img.dingliuads.com/file/1794483169340_lQDPJx7sFvNujXnNBDjNBaCwH-ZCd1M1YbYKw4ewOA-KAA_1440_1080.jpg" alt="Mega Zing Spa storefront in San Dimas" loading="lazy" />
-            </div>
-            <div class="about-accent">
-              <img src="https://img.dingliuads.com/file/1794539976296_4.jpg" alt="Inside Mega Zing Spa" loading="lazy" />
-            </div>
-            <div class="about-badge">
-              <strong>Since 2020</strong>
+<header class="site-header" id="header">
+<div class="container nav">
+<a aria-label="Mega Zing SPA home" class="brand" href="#home">
+<img alt="Mega Zing SPA logo" class="brand-logo" src="https://img.dingliuads.com/file/1794483163448_lQDPJwlJRFQnVvnNApbNAn6wTQMYhQ4w5C0Kw4emsNnfAA_638_662.jpg"/>
+<span class="brand-text">
+<span class="brand-name">Mega Zing SPA</span>
+<span class="brand-city">San Dimas, California</span>
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a href="#about">About</a>
+<a href="#specials">Special Offers</a><a href="#spa-gallery">Our Spa</a>
+<a href="#services">Services</a>
+<a href="#gifts">Gifts &amp; Rewards</a>
+<a href="#experience">Experience</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+<a class="btn btn--gold nav-cta" href="tel:+19099665588">Call Now</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="menu-toggle">
+<span></span>
+</button>
+</div>
+<nav aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu">
+<a href="#about">About</a>
+<a href="#specials">Special Offers</a><a href="#spa-gallery">Our Spa</a>
+<a href="#services">Services</a>
+<a href="#gifts">Gifts &amp; Rewards</a>
+<a href="#experience">Experience</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+<a href="tel:+19099665588">Call Now</a>
+</nav>
+</header>
+<main>
+<section aria-label="Mega Zing SPA introduction" class="hero" id="home">
+<div aria-hidden="true" class="hero-bg"><img alt="" class="active" src="https://img.dingliuads.com/file/1794835882557_13.jpg"/><img alt="" loading="lazy" src="https://img.dingliuads.com/file/1794835878686_2.jpg"/><img alt="" loading="lazy" src="https://img.dingliuads.com/file/1794835896732_1.jpg"/><img alt="" loading="lazy" src="https://img.dingliuads.com/file/1794835899891_15.jpg"/></div>
+<div class="container hero-content">
+<div>
+<div class="hero-kicker">A quieter way to unwind in San Dimas</div>
+<h1>Rest deeply.<span>Return renewed.</span></h1>
+<p class="hero-copy">Massage, couples experiences, Table Shower body care and beauty services in a clean, comfortable San Dimas spa—where Eastern traditions meet Western comfort.</p>
+<div class="hero-actions"><a class="btn btn--gold" href="tel:+19099665588">Call Now</a><a class="btn btn--outline" href="#specials">View Manager’s Specials</a></div>
+</div>
+<aside aria-label="Spa details" class="hero-panel">
+<small>Open 7 Days</small>
+<h2>Space to slow down, every day.</h2>
+<div class="hero-info">
+<div><span>◷</span><span>10:00 AM – 10:00 PM</span></div>
+<div><span>⌖</span><span>728 W. Arrow Hwy, San Dimas, CA 91773</span></div>
+<div><span>☎</span><a href="tel:+19099665588">909-966-5588</a></div>
+</div>
+</aside>
+</div>
+<div class="trust-strip">
+<div class="container trust-inner">
+<div class="trust-item"><span class="trust-icon">◌</span>Quiet Atmosphere</div>
+<div class="trust-item"><span class="trust-icon">◇</span>Private Comfort</div>
+<div class="trust-item"><span class="trust-icon">✦</span>Thoughtful Care</div>
+<div class="trust-item"><span class="trust-icon">◷</span>Open Daily</div>
+</div>
+</div>
+</section>
+<section aria-label="Manager's Special Offers" class="section specials" id="specials">
+<div class="container">
+<div class="specials-head reveal">
+<div>
+<div class="eyebrow">Manager’s Special Offers</div>
+<h2 class="section-title">Featured spa experiences at special pricing.</h2>
+</div>
+<p class="specials-note">These promotional prices reflect the latest information provided by Mega Zing SPA. Please confirm current promotional pricing when calling to book.</p>
+</div>
+<div class="specials-grid">
+<article class="special-card reveal">
+<div class="special-media"><img alt="Private massage room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835736360_10.jpg"/><span class="special-badge">Manager’s Special</span></div>
+<div class="special-body"><h3>60-Min Massage + Table Shower</h3><p>60-minute Signature Full Body Massage followed by a refreshing Table Shower. Full Body Scrub is not included.</p><div class="special-pricing"><span class="regular-price">Regular $115</span><span class="special-price">$105</span></div></div>
+</article>
+<article class="special-card featured reveal">
+<div class="special-media"><img alt="Table Shower room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835896732_1.jpg"/><span class="special-badge">Featured Special</span></div>
+<div class="special-body"><h3>Massage + Table Shower + Full Body Scrub</h3><p>60-minute Signature Full Body Massage, refreshing Table Shower and Full Body Scrub.</p><div class="special-pricing"><span class="regular-price">Regular $130</span><span class="special-price">$120</span></div></div>
+</article>
+<article class="special-card reveal">
+<div class="special-media"><img alt="Private massage treatment room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835729426_9.jpg"/><span class="special-badge">Extended Spa Experience</span></div>
+<div class="special-body"><h3>90-Min Massage + Table Shower + Body Scrub</h3><p>90-minute Signature Full Body Massage with refreshing Table Shower and Full Body Scrub.</p><div class="special-pricing"><span class="regular-price">Regular $160</span><span class="special-price">$150</span></div></div>
+</article>
+<article class="special-card reveal">
+<div class="special-media"><img alt="Mega Zing SPA private massage room" loading="lazy" src="https://img.dingliuads.com/file/1794835727790_7.jpg"/><span class="special-badge">Massage Add-On</span></div>
+<div class="special-body"><h3>Foot Scrub</h3><p>Gentle exfoliation to help remove dead skin cells and soften rough areas of the feet. Massage appointment required.</p><div class="special-pricing"><span class="regular-price">Regular $25</span><span class="special-price">$15</span></div></div>
+</article>
+<article class="special-card reveal">
+<div class="special-media"><img alt="Mega Zing SPA massage room" loading="lazy" src="https://img.dingliuads.com/file/1794835894317_12.jpg"/><span class="special-badge">Massage Add-On</span></div>
+<div class="special-body"><h3>Back Scrub</h3><p>Refreshing exfoliation to help smooth rough areas of the back. Massage appointment required.</p><div class="special-pricing"><span class="regular-price">Regular $35</span><span class="special-price">$20</span></div></div>
+</article>
+<article class="special-card reveal">
+<div class="special-media"><img alt="Couples massage room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835878686_2.jpg"/><span class="special-badge">Couples Feature</span></div>
+<div class="special-body"><h3>Couples Massage</h3><p>Relax together in one of our dedicated couples’ rooms. Call for current session options, availability and pricing.</p><div class="special-pricing"><span></span><span class="special-price" style="font-size:1.35rem">Call for Pricing</span></div></div>
+</article>
+</div>
+<div class="special-actions reveal"><a class="btn btn--dark" href="#services">View All Services &amp; Pricing</a><a class="btn btn--gold" href="tel:+19099665588">Call 909-966-5588</a></div>
+</div>
+</section>
+<section class="section about" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-image-stack reveal">
+<div class="about-main">
+<img alt="Mega Zing Spa storefront in San Dimas" loading="lazy" src="https://img.dingliuads.com/file/1794483169340_lQDPJx7sFvNujXnNBDjNBaCwH-ZCd1M1YbYKw4ewOA-KAA_1440_1080.jpg"/>
+</div>
+<div class="about-accent">
+<img alt="Inside Mega Zing Spa" loading="lazy" src="https://img.dingliuads.com/file/1794539976296_4.jpg"/>
+</div>
+<div class="about-badge">
+<strong>Since 2020</strong>
               A welcoming wellness destination in San Dimas, California.
             </div>
-          </div>
-
-          <div class="reveal about-story">
-            <div class="eyebrow">About Mega Zing Spa</div>
-            <h2 class="section-title">Where Eastern Traditions Meet Western Comfort</h2>
-            <p class="about-lead">Established in 2019 and officially opened in 2020, Mega Zing Spa is a welcoming wellness destination located in San Dimas, California.</p>
-            <p>Conveniently situated in the same shopping plaza as AutoZone, near the intersection of the 57 and 210 freeways, our spa offers easy access and ample parking.</p>
-            <p>We are dedicated to combining traditional Eastern techniques with modern Western approaches, providing a relaxing and personalized spa experience at affordable prices.</p>
-
-            <div class="about-stats">
-              <div class="about-stat"><strong>2,750</strong><span>Square feet of spa space</span></div>
-              <div class="about-stat"><strong>8</strong><span>Comfortable treatment rooms</span></div>
-              <div class="about-stat"><strong>3</strong><span>Beautiful couples’ rooms</span></div>
-              <div class="about-stat"><strong>7 Days</strong><span>Open 10am–10pm</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-details">
-          <article class="about-detail-card reveal">
-            <div class="about-detail-label">Our Spa Environment</div>
-            <h3>Spacious, comfortable and thoughtfully designed.</h3>
-            <p>Our spacious 2,750-square-foot facility features eight comfortable treatment rooms, including three beautifully decorated couples’ rooms designed to create a warm and romantic atmosphere.</p>
-            <p>We also offer a dedicated shower room equipped with a professional Table Shower and a separate shower.</p>
-            <p>Our services include professional massage therapy, beauty treatments, couples massage, body and foot scrubs, and Table Shower treatments.</p>
-            <p>Every detail of our spa is thoughtfully designed to create a peaceful, welcoming, and comfortable environment.</p>
-          </article>
-
-          <article class="about-detail-card reveal">
-            <div class="about-detail-label">Our Commitment to Cleanliness &amp; Comfort</div>
-            <h3>Fresh linens and guest comfort come first.</h3>
-            <p>At Mega Zing Spa, cleanliness and guest comfort are among our highest priorities.</p>
-            <p>All massage and treatment beds are prepared with freshly laundered sheets, pillowcases, towels, and coverings for each guest.</p>
-            <p>For Table Shower treatments, we use fresh disposable protective liners and replace all linens and washable accessories after every use.</p>
-            <p>During the colder months, our massage and treatment beds are equipped with electric warming blankets to provide additional warmth and comfort.</p>
-            <p>We believe a clean and comfortable environment is an essential part of a wonderful spa experience.</p>
-          </article>
-
-          <article class="about-detail-card reveal">
-            <div class="about-detail-label">Our Professional Team</div>
-            <h3>Experienced professionals with a passion for quality care.</h3>
-            <p>Our dedicated team consists of experienced massage therapists and beauty professionals who hold the appropriate California professional licenses or certifications.</p>
-            <p>All licensed and certified professionals display their professional credentials while on duty, reflecting our commitment to professionalism, transparency, and guest confidence.</p>
-            <p>Our team members bring years of practical experience, professional training, and a genuine passion for providing quality care.</p>
-            <p>By combining traditional Eastern massage techniques with modern Western approaches, we strive to provide personalized treatments tailored to each guest’s individual needs.</p>
-          </article>
-
-          <article class="about-detail-card about-detail-card--dark reveal">
-            <div class="about-detail-label">Our Philosophy</div>
-            <h3>Quality Spa Services at Affordable Prices.</h3>
-            <p class="philosophy-line">Your Relaxation. Your Comfort. Our Commitment.</p>
-            <p>We believe that professional spa treatments should be enjoyable, comfortable, and accessible.</p>
-            <p>Our goal is to provide every guest with attentive service, genuine hospitality, and a relaxing experience.</p>
-          </article>
-
-          <article class="about-detail-card reveal">
-            <div class="about-detail-label">Awards &amp; Recognition</div>
-            <h3>Recognition inspired by our guests.</h3>
-            <p>Over the years, Mega Zing Spa has been honored to receive the “People Love Us on Yelp” recognition, reflecting the appreciation and continued support of our valued guests.</p>
-            <p>In January 2026, Mega Zing Spa was also recognized by BusinessRate as the #3 Day Spa in San Dimas, California.</p>
-            <p>These recognitions inspire us to continue providing professional services, maintaining a clean and comfortable environment, and treating every guest with care and respect.</p>
-            <p>We sincerely appreciate the trust and support of our customers throughout the years.</p>
-          </article>
-
-          <article class="about-detail-card reveal">
-            <div class="about-detail-label">We Look Forward to Welcoming You!</div>
-            <h3>Visit alone, with a friend, or with someone special.</h3>
-            <p>Whether you visit alone, with a friend, or with someone special, we invite you to experience the harmony of Eastern traditions and Western comfort at Mega Zing Spa.</p>
-            <p><strong>We look forward to welcoming you soon!</strong></p>
-            <a class="btn btn--dark" href="tel:+19099665588" style="margin-top:12px;">Call Now</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section spa-gallery" id="spa-gallery">
-      <div class="container">
-        <div class="spa-gallery-head reveal">
-          <div>
-            <div class="eyebrow">Inside Mega Zing Spa</div>
-            <h2 class="section-title">Take a look around our spa.</h2>
-          </div>
-          <p class="section-copy">Explore our treatment spaces, couples’ rooms, and welcoming spa environment in San Dimas.</p>
-        </div>
-
-        <div class="store-photo-grid" aria-label="Mega Zing Spa photo gallery">
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539976296_4.jpg" alt="Mega Zing Spa interior photo 1" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539975513_5.jpg" alt="Mega Zing Spa interior photo 2" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539976937_6.jpg" alt="Mega Zing Spa interior photo 3" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539985281_7.jpg" alt="Mega Zing Spa interior photo 4" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539979223_1.jpg" alt="Mega Zing Spa interior photo 5" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539983366_2.jpg" alt="Mega Zing Spa interior photo 6" loading="lazy" /></figure>
-          <figure class="store-photo reveal"><img src="https://img.dingliuads.com/file/1794539987355_3.jpg" alt="Mega Zing Spa interior photo 7" loading="lazy" /></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark" id="experience">
-      <div class="container">
-        <div class="experience-intro reveal">
-          <div>
-            <div class="eyebrow">The Experience</div>
-            <h2 class="section-title">Simple. Calm. Unhurried.</h2>
-          </div>
-          <p class="section-copy">
+</div>
+<div class="reveal about-story">
+<div class="eyebrow">About Mega Zing Spa</div>
+<h2 class="section-title">Where Eastern Traditions Meet Western Comfort</h2>
+<p class="about-lead">Established in 2019 and officially opened in 2020, Mega Zing Spa is a welcoming wellness destination located in San Dimas, California.</p>
+<p>Conveniently situated in the same shopping plaza as AutoZone, near the intersection of the 57 and 210 freeways, our spa offers easy access and ample parking.</p>
+<p>We are dedicated to combining traditional Eastern techniques with modern Western approaches, providing a relaxing and personalized spa experience at affordable prices.</p>
+<div class="about-stats">
+<div class="about-stat"><strong>2,750</strong><span>Square feet of spa space</span></div>
+<div class="about-stat"><strong>8</strong><span>Comfortable treatment rooms</span></div>
+<div class="about-stat"><strong>3</strong><span>Beautiful couples’ rooms</span></div>
+<div class="about-stat"><strong>7 Days</strong><span>Open 10am–10pm</span></div>
+</div>
+</div>
+</div>
+<div class="about-details">
+<article class="about-detail-card reveal">
+<div class="about-detail-label">Our Spa Environment</div>
+<h3>Spacious, comfortable and thoughtfully designed.</h3>
+<p>Our spacious 2,750-square-foot facility features eight comfortable treatment rooms, including three beautifully decorated couples’ rooms designed to create a warm and romantic atmosphere.</p>
+<p>We also offer a dedicated shower room equipped with a professional Table Shower and a separate shower.</p>
+<p>Our services include professional massage therapy, beauty treatments, couples massage, body and foot scrubs, and Table Shower treatments.</p>
+<p>Every detail of our spa is thoughtfully designed to create a peaceful, welcoming, and comfortable environment.</p>
+</article>
+<article class="about-detail-card reveal">
+<div class="about-detail-label">Our Commitment to Cleanliness &amp; Comfort</div>
+<h3>Fresh linens and guest comfort come first.</h3>
+<p>At Mega Zing Spa, cleanliness and guest comfort are among our highest priorities.</p>
+<p>All massage and treatment beds are prepared with freshly laundered sheets, pillowcases, towels, and coverings for each guest.</p>
+<p>For Table Shower treatments, we use fresh disposable protective liners and replace all linens and washable accessories after every use.</p>
+<p>During the colder months, our massage and treatment beds are equipped with electric warming blankets to provide additional warmth and comfort.</p>
+<p>We believe a clean and comfortable environment is an essential part of a wonderful spa experience.</p>
+</article>
+<article class="about-detail-card reveal">
+<div class="about-detail-label">Our Professional Team</div>
+<h3>Experienced professionals with a passion for quality care.</h3>
+<p>Our dedicated team consists of experienced massage therapists and beauty professionals who hold the appropriate California professional licenses or certifications.</p>
+<p>All licensed and certified professionals display their professional credentials while on duty, reflecting our commitment to professionalism, transparency, and guest confidence.</p>
+<p>Our team members bring years of practical experience, professional training, and a genuine passion for providing quality care.</p>
+<p>By combining traditional Eastern massage techniques with modern Western approaches, we strive to provide personalized treatments tailored to each guest’s individual needs.</p>
+</article>
+<article class="about-detail-card about-detail-card--dark reveal">
+<div class="about-detail-label">Our Philosophy</div>
+<h3>Quality Spa Services at Affordable Prices.</h3>
+<p class="philosophy-line">Your Relaxation. Your Comfort. Our Commitment.</p>
+<p>We believe that professional spa treatments should be enjoyable, comfortable, and accessible.</p>
+<p>Our goal is to provide every guest with attentive service, genuine hospitality, and a relaxing experience.</p>
+</article>
+<article class="about-detail-card reveal">
+<div class="about-detail-label">Awards &amp; Recognition</div>
+<h3>Recognition inspired by our guests.</h3>
+<p>Over the years, Mega Zing Spa has been honored to receive the “People Love Us on Yelp” recognition, reflecting the appreciation and continued support of our valued guests.</p>
+<p>In January 2026, Mega Zing Spa was also recognized by BusinessRate as the #3 Day Spa in San Dimas, California.</p>
+<p>These recognitions inspire us to continue providing professional services, maintaining a clean and comfortable environment, and treating every guest with care and respect.</p>
+<p>We sincerely appreciate the trust and support of our customers throughout the years.</p>
+</article>
+<article class="about-detail-card reveal">
+<div class="about-detail-label">We Look Forward to Welcoming You!</div>
+<h3>Visit alone, with a friend, or with someone special.</h3>
+<p>Whether you visit alone, with a friend, or with someone special, we invite you to experience the harmony of Eastern traditions and Western comfort at Mega Zing Spa.</p>
+<p><strong>We look forward to welcoming you soon!</strong></p>
+<a class="btn btn--dark" href="tel:+19099665588" style="margin-top:12px;">Call Now</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section spa-gallery" id="spa-gallery">
+<div class="container"><div class="spa-gallery-head reveal"><div><div class="eyebrow">Inside Mega Zing Spa</div><h2 class="section-title">Real rooms. Real comfort.</h2></div><p class="section-copy">Explore our reception area, private treatment rooms, couples’ rooms and dedicated Table Shower space. All service imagery on this website now uses actual Mega Zing SPA rooms rather than generic massage photography.</p></div><div aria-label="Mega Zing Spa photo gallery" class="store-photo-grid store-photo-grid--expanded"><figure class="store-photo reveal"><img alt="Reception &amp; Guest Lounge at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835882557_13.jpg"/><figcaption>Reception &amp; Guest Lounge</figcaption></figure><figure class="store-photo reveal"><img alt="Front Desk at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835897371_14.jpg"/><figcaption>Front Desk</figcaption></figure><figure class="store-photo reveal"><img alt="Treatment Room Hallway at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835899891_15.jpg"/><figcaption>Treatment Room Hallway</figcaption></figure><figure class="store-photo reveal"><img alt="Couples Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835878686_2.jpg"/><figcaption>Couples Room</figcaption></figure><figure class="store-photo reveal"><img alt="Couples Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835888629_3.jpg"/><figcaption>Couples Room</figcaption></figure><figure class="store-photo reveal"><img alt="Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835730369_4.jpg"/><figcaption>Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835731325_5.jpg"/><figcaption>Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835723161_6.jpg"/><figcaption>Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835727790_7.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835732207_8.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835729426_9.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835736360_10.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835891281_11.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Private Treatment Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835894317_12.jpg"/><figcaption>Private Treatment Room</figcaption></figure><figure class="store-photo reveal"><img alt="Dedicated Table Shower Room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835896732_1.jpg"/><figcaption>Dedicated Table Shower Room</figcaption></figure></div></div>
+</section>
+<section class="section section--dark" id="experience">
+<div class="container">
+<div class="experience-intro reveal">
+<div>
+<div class="eyebrow">The Experience</div>
+<h2 class="section-title">Simple. Calm. Unhurried.</h2>
+</div>
+<p class="section-copy">
             The visit is designed to feel easy from the moment you arrive: a calm welcome, a comfortable treatment setting and time to settle into the experience without feeling rushed.
           </p>
-        </div>
-
-        <div class="experience-grid">
-          <article class="experience-card reveal"><div class="experience-step">01</div><h3>Calm Arrival</h3><p>Step in from the day and settle into a quieter atmosphere.</p></article>
-          <article class="experience-card reveal"><div class="experience-step">02</div><h3>Private Space</h3><p>Enjoy a comfortable setting designed around privacy and ease.</p></article>
-          <article class="experience-card reveal"><div class="experience-step">03</div><h3>Mindful Details</h3><p>A clean, organized environment helps keep the experience simple.</p></article>
-          <article class="experience-card reveal"><div class="experience-step">04</div><h3>Restful Finish</h3><p>Leave with a little more room to breathe and reset.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--cream" id="services">
-      <div class="container">
-        <div class="services-head reveal">
-          <div>
-            <div class="eyebrow">Services & Pricing</div>
-            <h2 class="section-title">Choose your way to unwind.</h2>
-          </div>
-          <p class="section-copy">Current pricing was not provided, so each service is listed as Call for Pricing. Call 909-966-5588 for availability and current details.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="4800">
-              <img class="active" src="https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg" alt="Full body massage service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/4c/2b/cb/4c2bcb39fbc7189277e8e505c2e1bc8f.jpg" alt="Full body massage service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/c0/e8/3f/c0e83fc3058518c785d6cfe1b15da601.jpg" alt="Full body massage service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">60 Minutes</span><span class="service-price">Call for Pricing</span></div>
-              <h3>One Hour Full Body Massage</h3>
-              <p>A full-body session for guests who want time to slow down and settle into a more relaxed pace.</p>
-              <div class="service-meta"><div><small>Good for</small><span>Everyday tension & rest</span></div><div><small>Focus</small><span>Full-body relaxation</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="5100">
-              <img class="active" src="https://i.pinimg.com/736x/21/8f/4c/218f4cd988ca278667bd28ff54a577ff.jpg" alt="90-minute massage service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg" alt="90-minute massage service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/f6/33/48/f6334826491861572c8e532a6a099cdc.jpg" alt="90-minute massage service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">90 Minutes</span><span class="service-price">Call for Pricing</span></div>
-              <h3>90 Minutes Full Body Massage</h3>
-              <p>An extended full-body session for guests who prefer a slower pace and more time to settle into the experience.</p>
-              <div class="service-meta"><div><small>Good for</small><span>Longer relaxation time</span></div><div><small>Focus</small><span>Extended full-body session</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img class="active" src="https://i.pinimg.com/736x/4c/2b/cb/4c2bcb39fbc7189277e8e505c2e1bc8f.jpg" alt="Relaxing massage service visual for One Hour Combo A" loading="lazy" />
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">60 Minutes</span><span class="service-price">Call for Pricing</span></div>
-              <h3>One Hour Combo A</h3>
-              <p>A relaxing 60-minute combo treatment. Please call Mega Zing SPA to confirm the current package details and pricing.</p>
-              <div class="service-meta"><div><small>Details</small><span>Confirm by phone</span></div><div><small>Duration</small><span>One hour</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img class="active" src="https://i.pinimg.com/736x/c0/e8/3f/c0e83fc3058518c785d6cfe1b15da601.jpg" alt="Relaxing massage service visual for 90 Minutes Combo B" loading="lazy" />
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">90 Minutes</span><span class="service-price">Call for Pricing</span></div>
-              <h3>90 Minutes Combo B</h3>
-              <p>An extended 90-minute combo treatment for deeper relaxation. Please call Mega Zing SPA to confirm the current package details and pricing.</p>
-              <div class="service-meta"><div><small>Details</small><span>Confirm by phone</span></div><div><small>Duration</small><span>90 minutes</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="4800">
-              <img class="active" src="https://i.pinimg.com/1200x/6a/df/fe/6adffe5706bdce88dd2d2d0fc6875398.jpg" alt="Foot reflexology service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/71/a4/b7/71a4b75a19fbadf33bc6dc340e91340c.jpg" alt="Foot reflexology service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/2b/85/42/2b8542fd0d099c9771bb5b332d6f51a9.jpg" alt="Foot reflexology service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">60 Minutes</span><span class="service-price">Call for Pricing</span></div>
-              <h3>One Hour Foot Reflexology</h3>
-              <p>A foot-focused option for guests who want a dedicated hour of relaxation after long days, extended standing or plenty of walking.</p>
-              <div class="service-meta"><div><small>Good for</small><span>Foot-focused relaxation</span></div><div><small>Focus</small><span>Feet & lower-leg comfort</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="5200">
-              <img class="active" src="https://images.squarespace-cdn.com/content/v1/5d5f2058a79cbf000111652a/1586842536251-IY8XEBZ4JINBCSKZKAHT/FaceMassage.jpg" alt="Facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/84/cd/b7/84cdb7509c5bacdc80bdf1336985d900.jpg" alt="Facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/df/fe/bd/dffebdc4792665f4680cdfb0480fd95c.jpg" alt="Facial service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">Facial Service</span><span class="service-price">Call for Pricing</span></div>
-              <h3>Microdermabrasion Facial</h3>
-              <p>A facial option listed by Mega Zing SPA. Please call to confirm current treatment details, timing and suitability for your skin before your visit.</p>
-              <div class="service-meta"><div><small>Type</small><span>Facial service</span></div><div><small>Details</small><span>Confirm by phone</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="5000">
-              <img class="active" src="https://i.pinimg.com/736x/a7/5e/f0/a75ef039455f894cd59d004e84b09e5a.jpg" alt="Hydra-facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/8b/49/32/8b493298510aa82cd86027f2a702918d.jpg" alt="Hydra-facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/d8/90/16/d89016192e58e45db9df89f20f748679.jpg" alt="Hydra-facial service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">Facial Service</span><span class="service-price">Call for Pricing</span></div>
-              <h3>Hydra-facial Aquadermabrasion</h3>
-              <p>A facial service appearing on Mega Zing SPA’s certificate. Call ahead for the current protocol, duration and any preparation guidance.</p>
-              <div class="service-meta"><div><small>Type</small><span>Facial service</span></div><div><small>Details</small><span>Confirm by phone</span></div></div>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-media carousel" data-interval="5400">
-              <img class="active" src="https://i.pinimg.com/1200x/e2/83/5d/e2835d86533ef7754575fb9e329beb11.jpg" alt="Signature rejuvenation facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/736x/d1/cf/e1/d1cfe1823699e9cfa29879493520aae9.jpg" alt="Signature rejuvenation facial service visual" loading="lazy" />
-              <img src="https://i.pinimg.com/1200x/84/cd/b7/84cdb7509c5bacdc80bdf1336985d900.jpg" alt="Signature rejuvenation facial service visual" loading="lazy" />
-              <div class="carousel-dots"></div>
-            </div>
-            <div class="service-body">
-              <div class="service-topline"><span class="service-duration">Facial Service</span><span class="service-price">Call for Pricing</span></div>
-              <h3>Signature Rejuvenation Facial</h3>
-              <p>Mega Zing SPA’s signature facial option. Please call for current timing, treatment steps and pricing.</p>
-              <div class="service-meta"><div><small>Type</small><span>Signature facial</span></div><div><small>Details</small><span>Confirm by phone</span></div></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gifts" id="gifts">
-      <div class="container">
-        <div class="gifts-head reveal">
-          <div class="eyebrow">Gifts & Loyalty</div>
-          <h2 class="section-title">A thoughtful gift. A rewarding return.</h2>
-          <p class="section-copy" style="margin-inline:auto;">Gift certificates and customer rewards are shown here in their own dedicated section.</p>
-        </div>
-
-        <div class="gift-grid">
-          <article class="gift-card reveal">
-            <div class="gift-image">
-              <img src="mega_zing_spa_gift_certificates.png" alt="Mega Zing SPA Gift Certificates" loading="lazy" />
-            </div>
-            <div class="gift-content">
-              <span class="gift-label">🎁 Gift Certificates</span>
-              <h3>Gift Certificates</h3>
-              <p>Give the gift of relaxation and wellness with a Mega Zing SPA Gift Certificate.</p>
-              <p>Perfect for birthdays, anniversaries, holidays, Valentine’s Day, Mother’s Day or any special occasion.</p>
-              <ul class="gift-points">
-                <li>Choose from massage, foot reflexology and facial treatments.</li>
-                <li>Gift certificates are available for purchase at the spa.</li>
-                <li>Call the spa for current options and details.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="gift-card reveal">
-            <div class="gift-image">
-              <img src="luxury_spa_rewards_card_banner.png" alt="Mega Zing SPA Customer Rewards Program" loading="lazy" />
-            </div>
-            <div class="gift-content">
-              <span class="gift-label">🌸 Customer Rewards Program</span>
-              <h3>Customer Rewards</h3>
-              <p>At Mega Zing SPA, loyal customers can take part in the Customer Rewards Program.</p>
-              <p>Receive one stamp for each qualifying visit. After collecting 10 stamps, receive a <strong>$25 credit</strong> toward your 11th visit.</p>
-              <ul class="gift-points">
-                <li>One stamp per qualifying visit.</li>
-                <li>Collect 10 stamps.</li>
-                <li>Receive a $25 credit toward the 11th visit.</li>
-                <li>Ask staff for current program details.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--cream" aria-label="Mega Zing SPA atmosphere">
-      <div class="container">
-        <div class="reveal">
-          <div class="eyebrow">Visit Mega Zing SPA</div>
-          <h2 class="section-title">Easy to find. Easy to make time for.</h2>
-          <p class="section-copy">Located on W. Arrow Hwy in San Dimas and open seven days a week from 10am to 10pm.</p>
-        </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-main reveal">
-            <img src="https://img.dingliuads.com/file/1794483169340_lQDPJx7sFvNujXnNBDjNBaCwH-ZCd1M1YbYKw4ewOA-KAA_1440_1080.jpg" alt="Mega Zing SPA storefront" loading="lazy" />
-            <div class="gallery-caption"><strong>San Dimas Location</strong><span>728 W. Arrow Hwy, San Dimas, CA 91773</span></div>
-          </div>
-
-          <div class="gallery-side">
-            <div class="gallery-tile reveal">
-              <img src="mega_zing_spa_gift_certificates.png" alt="Gift certificates at Mega Zing SPA" loading="lazy" />
-              <div class="gallery-caption"><strong>Gift Certificates</strong><span>Available for purchase at the spa.</span></div>
-            </div>
-            <div class="gallery-tile reveal">
-              <img src="luxury_spa_rewards_card_banner.png" alt="Mega Zing SPA customer rewards program" loading="lazy" />
-              <div class="gallery-caption"><strong>Customer Rewards</strong><span>10 qualifying stamps → $25 credit toward visit 11.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark" id="reviews">
-      <div class="container">
-        <div class="reveal">
-          <div class="eyebrow">Review Layout</div>
-          <h2 class="section-title">Guest feedback, ready when you are.</h2>
-          <p class="review-note">No verified customer review text was provided, so the slider below uses clearly labeled sample copy. Replace these samples with real reviews before publishing them as customer testimonials.</p>
-        </div>
-      </div>
-      <div class="reviews-viewport" aria-label="Sample review layout">
-        <div class="review-track" id="review-row-1"></div>
-        <div class="review-track reverse" id="review-row-2"></div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container faq-grid">
-        <div class="reveal">
-          <div class="eyebrow">FAQ</div>
-          <h2 class="section-title">Helpful details before you visit.</h2>
-          <p class="section-copy">For policies or health-related questions not covered by the provided information, call the spa directly.</p>
-        </div>
-
-        <div class="faq-list reveal">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>How early should I arrive?</span><span>+</span></button>
-            <div class="faq-a"><div><p>A specific arrival-time policy was not provided. Calling ahead is the best way to confirm whether you should arrive early for your visit.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Can I get a massage if I have an injury?</span><span>+</span></button>
-            <div class="faq-a"><div><p>If you have an injury or health concern, contact the spa before your visit and follow the guidance of your healthcare professional when appropriate.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>What is your cancellation policy?</span><span>+</span></button>
-            <div class="faq-a"><div><p>The current cancellation policy was not included in the provided materials. Please call Mega Zing SPA at 909-966-5588 to confirm it.</p></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false"><span>Is there parking available?</span><span>+</span></button>
-            <div class="faq-a"><div><p>Parking details were not included in the provided materials. Please call the spa for the most current parking information.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--cream" id="contact">
-      <div class="container">
-        <div class="services-head reveal">
-          <div>
-            <div class="eyebrow">Contact & Location</div>
-            <h2 class="section-title">Visit us in San Dimas.</h2>
-          </div>
-          <p class="section-copy">Open seven days a week with convenient daily hours.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3>Mega Zing SPA</h3>
-            <div class="contact-row"><span>⌖</span><div><b>Address</b><span>728 W. Arrow Hwy<br />San Dimas, CA 91773</span></div></div>
-            <div class="contact-row"><span>☎</span><div><b>Phone</b><a href="tel:+19099665588">909-966-5588</a></div></div>
-            <div class="contact-row"><span>◷</span><div><b>Hours</b><span>Open 7 Days · 10am–10pm</span></div></div>
-            <div class="contact-row"><span>↗</span><div><b>Website</b><a href="https://www.megazingspa.com" target="_blank" rel="noopener">www.megazingspa.com</a></div></div>
-            <div class="contact-actions">
-              <a class="btn btn--dark" href="tel:+19099665588">Call Now</a>
-              <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=728%20W.%20Arrow%20Hwy%2C%20San%20Dimas%2C%20CA%2091773" target="_blank" rel="noopener">Get Directions</a>
-            </div>
-          </div>
-
-          <div class="map-wrap reveal">
-            <iframe
-              title="Map showing Mega Zing SPA in San Dimas"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=728%20W.%20Arrow%20Hwy,%20San%20Dimas,%20CA%2091773&output=embed">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h2>Mega Zing SPA</h2>
-          <p>A calm San Dimas destination for massage, foot reflexology, selected facial services, gift certificates and customer rewards.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#about">About</a>
-          <a href="#spa-gallery">Our Spa</a>
-          <a href="#services">Services</a>
-          <a href="#gifts">Gifts & Rewards</a>
-          <a href="tel:+19099665588">Call Now</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <div>© <span id="year"></span> Mega Zing SPA. All rights reserved.</div>
-        <span>728 W. Arrow Hwy · San Dimas, CA 91773 · 909-966-5588</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+</div>
+<div class="experience-grid">
+<article class="experience-card reveal"><div class="experience-step">01</div><h3>Calm Arrival</h3><p>Step in from the day and settle into a quieter atmosphere.</p></article>
+<article class="experience-card reveal"><div class="experience-step">02</div><h3>Private Space</h3><p>Enjoy a comfortable setting designed around privacy and ease.</p></article>
+<article class="experience-card reveal"><div class="experience-step">03</div><h3>Mindful Details</h3><p>A clean, organized environment helps keep the experience simple.</p></article>
+<article class="experience-card reveal"><div class="experience-step">04</div><h3>Restful Finish</h3><p>Leave with a little more room to breathe and reset.</p></article>
+</div>
+</div>
+</section>
+<section class="section services-menu" id="services">
+<div class="container">
+<div class="services-head reveal">
+<div><div class="eyebrow">Services &amp; Pricing</div><h2 class="section-title">Explore our massage, body care and spa experiences.</h2></div>
+<div><p class="section-copy">Choose a service, review the available timing and pricing, then call us directly to confirm availability.</p><a class="btn btn--gold" href="tel:+19099665588" style="margin-top:16px">Call 909-966-5588</a></div>
+</div>
+<div class="service-disclaimer reveal"><strong>Pricing note:</strong> Manager’s Special and Table Shower / Scrub prices below are taken directly from the latest pricing information provided. For massage, Combo and beauty services where no current standalone price was supplied, the website displays “Call for Current Pricing” rather than inventing a price.</div>
+<nav aria-label="Service categories" class="category-nav reveal">
+<a href="#massage-menu">Massage</a><a href="#specialty-menu">Specialty Massage</a><a href="#combo-menu">Combo Massage</a><a href="#table-shower-menu">Table Shower</a><a href="#scrub-menu">Body Scrub</a><a href="#beauty-menu">Beauty Care</a><a href="#packages-menu">Spa Packages</a>
+</nav>
+<section class="service-category" id="massage-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Massage</div><h3>Signature Full Body Massage</h3></div><p>Our Signature Full Body Massage combines traditional Chinese massage techniques with modern Western massage methods for a personalized relaxation experience.</p></div>
+<div class="menu-grid">
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Private massage room for 60-minute full body massage at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835736360_10.jpg"/><span class="room-label">Private Massage Room</span></div><div class="menu-card-body"><span class="menu-kicker">Signature Massage</span><h4>60-Minute Signature Full Body Massage</h4><p>A full-body massage session for guests who want a complete hour of relaxation in a private treatment room.</p><div class="menu-facts"><span class="menu-duration">60 Minutes</span><span class="menu-price"><small>Price</small>Call</span></div><a class="call-inline" href="tel:+19099665588">Call for Current Pricing →</a></div></article>
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Private massage room for 90-minute full body massage at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835729426_9.jpg"/><span class="room-label">Private Massage Room</span></div><div class="menu-card-body"><span class="menu-kicker">Extended Massage</span><h4>90-Minute Signature Full Body Massage</h4><p>An extended full-body massage experience for guests who prefer additional time to relax and unwind.</p><div class="menu-facts"><span class="menu-duration">90 Minutes</span><span class="menu-price"><small>Price</small>Call</span></div><a class="call-inline" href="tel:+19099665588">Call for Current Pricing →</a></div></article>
+</div>
+</section>
+<section class="service-category" id="specialty-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Specialty Massage</div><h3>Special experiences, including couples’ rooms.</h3></div><p>Couples massage is one of our featured experiences, with dedicated two-bed rooms designed for guests who want to relax together.</p></div>
+<div class="couples-feature reveal"><div class="couples-feature-media"><img alt="Couples massage room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835878686_2.jpg"/></div><div class="couples-feature-copy"><div class="eyebrow">Featured Specialty</div><h4>Couples Massage</h4><p>Enjoy your massage together in one of our dedicated couples’ rooms. Mega Zing Spa has three beautifully decorated couples’ rooms designed to create a warm, comfortable atmosphere.</p><p>Session options and current pricing were not included in the latest pricing text, so please call for details.</p><a class="btn btn--gold" href="tel:+19099665588" style="align-self:flex-start;margin-top:12px">Call for Couples Massage</a></div></div>
+<div class="menu-grid" style="margin-top:18px">
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Warm couples treatment room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835888629_3.jpg"/><span class="room-label">Couples Room</span></div><div class="menu-card-body"><span class="menu-kicker">Couples Experience</span><h4>Couples Massage</h4><p>A shared massage experience in a private two-bed treatment room.</p><div class="menu-facts"><span class="menu-duration">Call for session options</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Private treatment room for foot reflexology at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835732207_8.jpg"/><span class="room-label">Private Treatment Room</span></div><div class="menu-card-body"><span class="menu-kicker">Foot Care</span><h4>One Hour Foot Reflexology</h4><p>A 60-minute foot-focused relaxation service listed by Mega Zing SPA.</p><div class="menu-facts"><span class="menu-duration">60 Minutes</span><span class="menu-price"><small>Price</small>Call</span></div><a class="call-inline" href="tel:+19099665588">Call for Current Pricing →</a></div></article>
+</div>
+</section>
+<section class="service-category" id="combo-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Combo Massage</div><h3>Combo massage options.</h3></div><p>Combo A and Combo B are established Mega Zing SPA service options. Please call for the latest package details and current standalone pricing.</p></div>
+<div class="menu-grid">
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Massage room for One Hour Combo A at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835894317_12.jpg"/><span class="room-label">Private Massage Room</span></div><div class="menu-card-body"><span class="menu-kicker">Combo Massage</span><h4>One Hour Combo A</h4><p>A 60-minute combo treatment. Current component details and standalone price should be confirmed by phone.</p><div class="menu-facts"><span class="menu-duration">60 Minutes</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Massage room for 90 Minutes Combo B at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835891281_11.jpg"/><span class="room-label">Private Massage Room</span></div><div class="menu-card-body"><span class="menu-kicker">Extended Combo</span><h4>90 Minutes Combo B</h4><p>An extended 90-minute combo treatment. Current component details and standalone price should be confirmed by phone.</p><div class="menu-facts"><span class="menu-duration">90 Minutes</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+</div>
+</section>
+<section class="service-category" id="table-shower-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Table Shower &amp; Body Scrub</div><h3>Our featured spa experience.</h3></div><p>Refresh your body. Relax your muscles. Enjoy a complete spa experience.</p></div>
+<div class="table-feature reveal">
+<div class="table-feature-top"><div class="table-feature-media"><img alt="Dedicated Table Shower facility at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835896732_1.jpg"/></div><div class="table-feature-copy"><div class="eyebrow">Table Shower &amp; Full Body Scrub</div><h4>Gentle Exfoliation &amp; Refreshing Body Care</h4><p>Our Table Shower and Full Body Scrub treatments are among our specialty spa services. These treatments combine refreshing body care with gentle exfoliation to help remove dead skin cells, soften rough areas, and leave the skin feeling clean, smooth, and refreshed.</p><p>Guests may enjoy the Table Shower &amp; Full Body Scrub treatment separately or combine it with our Signature Full Body Massage for a more complete spa experience.</p><div class="table-price-box"><div><span>Table Shower &amp; Full Body Scrub</span><br/><span>30 Minutes</span></div><strong>$65</strong></div><div class="ingredients"><div class="ingredient"><b>Natural Sugar Crystals</b><span>Gentle physical exfoliation to help loosen and remove dead skin cells and smooth rough areas.</span></div><div class="ingredient"><b>Aloe Vera</b><span>Commonly used for moisturizing and soothing properties and a refreshing sensation.</span></div><div class="ingredient"><b>Glycerin</b><span>Helps attract and retain water in the skin, supporting softer, more hydrated skin.</span></div><div class="ingredient"><b>Mineral Oil</b><span>An emollient that helps soften and condition the skin and reduce moisture loss.</span></div><div class="ingredient"><b>Chamomile Extract</b><span>Commonly used for soothing properties and a gentle, comfortable skincare experience.</span></div></div></div></div>
+<div class="table-steps"><article class="table-step"><span class="step-num">Step 1</span><strong>Refreshing Body Rinse</strong><p>The treatment includes a refreshing body rinse using our dedicated Table Shower facilities.</p></article><article class="table-step"><span class="step-num">Step 2</span><strong>Gentle Full Body Exfoliation</strong><p>The body scrub is gently applied using controlled, comfortable movements. Natural sugar crystals help exfoliate dead skin cells and smooth rough areas.</p></article><article class="table-step"><span class="step-num">Step 3</span><strong>Rinse &amp; Refresh</strong><p>The exfoliating product is rinsed away, leaving the skin feeling clean and refreshed.</p></article><article class="table-step"><span class="step-num">Step 4</span><strong>Soft &amp; Smooth Skin</strong><p>Moisturizing ingredients help leave the skin feeling soft, smooth and conditioned.</p></article></div>
+</div>
+<div class="service-info-box reveal"><strong>Optional Hair Wash:</strong> Short Hair — Additional $10  ·  Long Hair — Additional $15. Hair washing is optional and is not included in standard Table Shower package prices.</div>
+</section>
+<section class="service-category" id="scrub-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Body Scrub Add-Ons</div><h3>Foot Scrub &amp; Back Scrub</h3></div><p>Optional exfoliating treatments performed in our comfortable private massage rooms. No Table Shower is required.</p></div>
+<div class="addon-grid">
+<article class="addon-card reveal"><div class="menu-kicker">Optional Massage Add-On</div><h4>Foot Scrub</h4><p>Gentle exfoliation to help remove dead skin cells and soften rough areas of the feet, leaving them feeling cleaner, smoother, softer and revitalized.</p><div class="addon-price"><span class="was">Regular $25</span><span class="now">$15</span></div></article>
+<article class="addon-card reveal"><div class="menu-kicker">Optional Massage Add-On</div><h4>Back Scrub</h4><p>Refreshing exfoliation to help remove dead skin cells and smooth rough areas, leaving the back feeling refreshed, soft and comfortable.</p><div class="addon-price"><span class="was">Regular $35</span><span class="now">$20</span></div></article>
+</div>
+<div class="service-info-box reveal"><strong>Important Service Information:</strong> Foot Scrub and Back Scrub are available only as add-on services with a massage treatment and cannot be booked separately. Both are performed in regular massage rooms. Scrub treatments are performed within the scheduled massage session and do not extend the total session duration. Additional charges apply.</div>
+</section>
+<section class="service-category" id="beauty-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Beauty Care</div><h3>Facial &amp; skincare services.</h3></div><p>These beauty services are established Mega Zing SPA offerings. The latest standalone pricing for these treatments was not included in the new pricing text, so please call for current details.</p></div>
+<div class="menu-grid">
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Beauty treatment room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835730369_4.jpg"/><span class="room-label">Beauty Treatment Room</span></div><div class="menu-card-body"><span class="menu-kicker">Beauty Care</span><h4>Microdermabrasion Facial</h4><p>A facial service offered by Mega Zing SPA. Call for current treatment timing, details and pricing.</p><div class="menu-facts"><span class="menu-duration">Call for treatment time</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Beauty treatment room with equipment at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835731325_5.jpg"/><span class="room-label">Beauty Treatment Room</span></div><div class="menu-card-body"><span class="menu-kicker">Beauty Care</span><h4>Hydra-facial Aquadermabrasion</h4><p>A facial service offered by Mega Zing SPA. Call for current treatment timing, details and pricing.</p><div class="menu-facts"><span class="menu-duration">Call for treatment time</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+<article class="menu-card reveal"><div class="menu-card-media"><img alt="Spa beauty treatment room at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835723161_6.jpg"/><span class="room-label">Beauty Treatment Room</span></div><div class="menu-card-body"><span class="menu-kicker">Signature Facial</span><h4>Signature Rejuvenation Facial</h4><p>Mega Zing SPA’s signature facial option. Call for current treatment timing, details and pricing.</p><div class="menu-facts"><span class="menu-duration">Call for treatment time</span><span class="menu-price"><small>Price</small>Call</span></div></div></article>
+</div>
+</section>
+<section class="service-category" id="packages-menu">
+<div class="service-category-head reveal"><div><div class="eyebrow">Signature Massage &amp; Table Shower Packages</div><h3>Relax your muscles. Refresh your skin.</h3></div><p>Specialty packages combining professional massage with refreshing Table Shower body care during one spa visit.</p></div>
+<div class="package-grid">
+<article class="package-card reveal"><div class="package-media"><img alt="Massage room for Package 1 at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835736360_10.jpg"/></div><div class="package-content"><span class="package-tag">Package 1</span><h4>Full Body Massage + Table Shower</h4><p>Enjoy our Signature Full Body Massage followed by a refreshing Table Shower experience. Full Body Scrub is not included.</p><ul><li>60-Minute Signature Full Body Massage</li><li>Refreshing Table Shower</li></ul><div class="package-prices"><span class="regular">Regular $115</span><span class="special"><small>Manager’s Special</small>$105</span></div></div></article>
+<article class="package-card featured reveal"><div class="package-media"><img alt="Table Shower room for featured Package 2 at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835896732_1.jpg"/></div><div class="package-content"><span class="package-tag">Package 2 · Featured Special</span><h4>Full Body Massage + Table Shower + Full Body Scrub</h4><p>Relaxing full-body massage combined with a refreshing Table Shower and gentle body exfoliation.</p><ul><li>60-Minute Signature Full Body Massage</li><li>Refreshing Table Shower</li><li>Full Body Scrub</li></ul><div class="package-prices"><span class="regular">Regular $130</span><span class="special"><small>Manager’s Special</small>$120</span></div></div></article>
+<article class="package-card reveal"><div class="package-media"><img alt="Massage room for extended Package 3 at Mega Zing SPA" loading="lazy" src="https://img.dingliuads.com/file/1794835729426_9.jpg"/></div><div class="package-content"><span class="package-tag">Package 3 · Extended Spa Experience</span><h4>90-Min Massage + Table Shower + Body Scrub</h4><p>A longer massage session combined with a refreshing Table Shower and Full Body Scrub.</p><ul><li>90-Minute Signature Full Body Massage</li><li>Refreshing Table Shower</li><li>Full Body Scrub</li></ul><div class="package-prices"><span class="regular">Regular $160</span><span class="special"><small>Manager’s Special</small>$150</span></div></div></article>
+</div>
+<div class="why-grid reveal"><article class="why-card"><strong>A Complete Spa Experience</strong><span>Combine relaxing massage techniques with refreshing body care in one visit.</span></article><article class="why-card"><strong>Gentle Body Exfoliation</strong><span>Natural sugar crystals help remove dead skin cells and improve the feel of rough skin.</span></article><article class="why-card"><strong>Moisturizing Ingredients</strong><span>Aloe vera, glycerin, mineral oil and chamomile extract support a soft, comfortable skincare experience.</span></article><article class="why-card"><strong>Personalized Massage</strong><span>Signature Full Body Massage combines traditional Chinese techniques with Western massage methods.</span></article><article class="why-card"><strong>Convenient Combination Packages</strong><span>Enjoy massage, Table Shower and Full Body Scrub during one spa visit.</span></article><article class="why-card"><strong>Additional Skincare Options</strong><span>Optional Foot Scrub and Back Scrub can be added to regular massage appointments without a Table Shower.</span></article></div>
+</section>
+<div class="service-call-band reveal"><div><h3>Call now to book your appointment.</h3><p>728 W. Arrow Hwy, San Dimas, CA 91773. Please confirm treatment details, additional service time and current promotional pricing when booking.</p></div><a class="btn btn--gold" href="tel:+19099665588">Call 909-966-5588</a></div>
+</div>
+</section>
+<section class="section gifts" id="gifts">
+<div class="container">
+<div class="gifts-head reveal">
+<div class="eyebrow">Gifts &amp; Loyalty</div>
+<h2 class="section-title">A thoughtful gift. A rewarding return.</h2>
+<p class="section-copy" style="margin-inline:auto;">Gift certificates and customer rewards are shown here in their own dedicated section.</p>
+</div>
+<div class="gift-grid">
+<article class="gift-card reveal">
+<div class="gift-image">
+<img alt="Mega Zing SPA Gift Certificates" loading="lazy" src="mega_zing_spa_gift_certificates.png"/>
+</div>
+<div class="gift-content">
+<span class="gift-label">🎁 Gift Certificates</span>
+<h3>Gift Certificates</h3>
+<p>Give the gift of relaxation and wellness with a Mega Zing SPA Gift Certificate.</p>
+<p>Perfect for birthdays, anniversaries, holidays, Valentine’s Day, Mother’s Day or any special occasion.</p>
+<ul class="gift-points">
+<li>Choose from massage, foot reflexology and facial treatments.</li>
+<li>Gift certificates are available for purchase at the spa.</li>
+<li>Call the spa for current options and details.</li>
+</ul>
+</div>
+</article>
+<article class="gift-card reveal">
+<div class="gift-image">
+<img alt="Mega Zing SPA Customer Rewards Program" loading="lazy" src="luxury_spa_rewards_card_banner.png"/>
+</div>
+<div class="gift-content">
+<span class="gift-label">🌸 Customer Rewards Program</span>
+<h3>Customer Rewards</h3>
+<p>At Mega Zing SPA, loyal customers can take part in the Customer Rewards Program.</p>
+<p>Receive one stamp for each qualifying visit. After collecting 10 stamps, receive a <strong>$25 credit</strong> toward your 11th visit.</p>
+<ul class="gift-points">
+<li>One stamp per qualifying visit.</li>
+<li>Collect 10 stamps.</li>
+<li>Receive a $25 credit toward the 11th visit.</li>
+<li>Ask staff for current program details.</li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section aria-label="Mega Zing SPA atmosphere" class="section section--cream">
+<div class="container">
+<div class="reveal">
+<div class="eyebrow">Visit Mega Zing SPA</div>
+<h2 class="section-title">Easy to find. Easy to make time for.</h2>
+<p class="section-copy">Located on W. Arrow Hwy in San Dimas and open seven days a week from 10am to 10pm.</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-main reveal">
+<img alt="Mega Zing SPA storefront" loading="lazy" src="https://img.dingliuads.com/file/1794483169340_lQDPJx7sFvNujXnNBDjNBaCwH-ZCd1M1YbYKw4ewOA-KAA_1440_1080.jpg"/>
+<div class="gallery-caption"><strong>San Dimas Location</strong><span>728 W. Arrow Hwy, San Dimas, CA 91773</span></div>
+</div>
+<div class="gallery-side">
+<div class="gallery-tile reveal">
+<img alt="Gift certificates at Mega Zing SPA" loading="lazy" src="mega_zing_spa_gift_certificates.png"/>
+<div class="gallery-caption"><strong>Gift Certificates</strong><span>Available for purchase at the spa.</span></div>
+</div>
+<div class="gallery-tile reveal">
+<img alt="Mega Zing SPA customer rewards program" loading="lazy" src="luxury_spa_rewards_card_banner.png"/>
+<div class="gallery-caption"><strong>Customer Rewards</strong><span>10 qualifying stamps → $25 credit toward visit 11.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--dark" id="reviews">
+<div class="container">
+<div class="reveal">
+<div class="eyebrow">Review Layout</div>
+<h2 class="section-title">Guest feedback, ready when you are.</h2>
+<p class="review-note">No verified customer review text was provided, so the slider below uses clearly labeled sample copy. Replace these samples with real reviews before publishing them as customer testimonials.</p>
+</div>
+</div>
+<div aria-label="Sample review layout" class="reviews-viewport">
+<div class="review-track" id="review-row-1"></div>
+<div class="review-track reverse" id="review-row-2"></div>
+</div>
+</section>
+<section class="section" id="faq">
+<div class="container faq-grid">
+<div class="reveal">
+<div class="eyebrow">FAQ</div>
+<h2 class="section-title">Helpful details before you visit.</h2>
+<p class="section-copy">For policies or health-related questions not covered by the provided information, call the spa directly.</p>
+</div>
+<div class="faq-list reveal">
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q"><span>How early should I arrive?</span><span>+</span></button>
+<div class="faq-a"><div><p>A specific arrival-time policy was not provided. Calling ahead is the best way to confirm whether you should arrive early for your visit.</p></div></div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q"><span>Can I get a massage if I have an injury?</span><span>+</span></button>
+<div class="faq-a"><div><p>If you have an injury or health concern, contact the spa before your visit and follow the guidance of your healthcare professional when appropriate.</p></div></div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q"><span>What is your cancellation policy?</span><span>+</span></button>
+<div class="faq-a"><div><p>The current cancellation policy was not included in the provided materials. Please call Mega Zing SPA at 909-966-5588 to confirm it.</p></div></div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q"><span>Is there parking available?</span><span>+</span></button>
+<div class="faq-a"><div><p>Parking details were not included in the provided materials. Please call the spa for the most current parking information.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--cream" id="contact">
+<div class="container">
+<div class="services-head reveal">
+<div>
+<div class="eyebrow">Contact &amp; Location</div>
+<h2 class="section-title">Visit us in San Dimas.</h2>
+</div>
+<p class="section-copy">Open seven days a week with convenient daily hours.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-card reveal">
+<h3>Mega Zing SPA</h3>
+<div class="contact-row"><span>⌖</span><div><b>Address</b><span>728 W. Arrow Hwy<br/>San Dimas, CA 91773</span></div></div>
+<div class="contact-row"><span>☎</span><div><b>Phone</b><a href="tel:+19099665588">909-966-5588</a></div></div>
+<div class="contact-row"><span>◷</span><div><b>Hours</b><span>Open 7 Days · 10am–10pm</span></div></div>
+<div class="contact-row"><span>↗</span><div><b>Website</b><a href="https://www.megazingspa.com" rel="noopener" target="_blank">www.megazingspa.com</a></div></div>
+<div class="contact-actions">
+<a class="btn btn--dark" href="tel:+19099665588">Call Now</a>
+<a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=728%20W.%20Arrow%20Hwy%2C%20San%20Dimas%2C%20CA%2091773" rel="noopener" target="_blank">Get Directions</a>
+</div>
+</div>
+<div class="map-wrap reveal">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=728%20W.%20Arrow%20Hwy,%20San%20Dimas,%20CA%2091773&amp;output=embed" title="Map showing Mega Zing SPA in San Dimas">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-brand">
+<h2>Mega Zing SPA</h2>
+<p>Massage, couples experiences, Table Shower body care, scrubs, beauty services, gift certificates and customer rewards in San Dimas.</p>
+</div>
+<nav aria-label="Footer navigation" class="footer-nav">
+<a href="#about">About</a>
+<a href="#specials">Special Offers</a><a href="#spa-gallery">Our Spa</a>
+<a href="#services">Services</a>
+<a href="#gifts">Gifts &amp; Rewards</a>
+<a href="tel:+19099665588">Call Now</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+<div class="footer-bottom">
+<div>© <span id="year"></span> Mega Zing SPA. All rights reserved.</div>
+<span>728 W. Arrow Hwy · San Dimas, CA 91773 · 909-966-5588</span>
+</div>
+</div>
+</footer>
+<script>
     (() => {
       const header = document.getElementById('header');
       const menuToggle = document.querySelector('.menu-toggle');
